@@ -1,0 +1,195 @@
+/*CSS RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*CSS MICRO CLEARFIX*/
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+/*CSS STYLE*/
+
+/*BODY*/
+body
+{
+    background-image: url(floor-tile.png);
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #FEADB9;
+}
+
+/*HEADER*/
+.container
+{
+    width: 1090px;
+    background-color: #4F4B45;
+    margin: auto;
+}
+
+.header
+{
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header h1
+{
+    margin-bottom: 10px;
+}
+
+.header ul li
+{
+    display: inline-block;
+    font-size: 17px;
+}
+
+.header a
+{
+    color: #FCFAF1;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.header a:hover
+{
+    color: #4F4B45;
+    background-color: #FCFAF1 ;
+    padding: 5px;
+}
+
+/*CONTENT*/
+.content
+{
+   padding: 30px;
+   background-color: #B3AB9E;
+}
+
+.content h2
+{
+    color: #4F4B45;
+    font-size: 33px;
+    font-weight: bold;
+}
+
+.content p
+{
+    color: #FCFAF1;
+    font-size: 20px;
+    text-align: justify;
+    line-height: 1cm;
+}
+
+.content img
+{
+    display: block;
+    margin: 20px auto;
+    border-style: dashed;
+    border-color: #FCFAF1;
+    border-width: 5px;
+}
+
+.content h3
+{
+    font-weight: bold;
+    color: #4F4B45;
+    font-size: 25px;
+}
+
+.content span
+{
+    font-style: italic;
+}
+
+/*REFERENSI*/
+.reference
+{
+    background-color: #4F4B45;
+    color: #FEADB9;
+}
+
+.reference h3
+{
+    text-align: center;
+    font-size: 20px;
+    line-height: 1cm;
+    font-weight: bold;
+}
+
+.reference a
+{
+    text-decoration: none;
+    font-size: 17px;
+    color: #FCFAF1;
+    line-height: 0.7cm;
+    margin-left: 3cm;
+}
+
+.reference a:hover
+{
+    color: #FEADB9;
+}
+
+/*FOOTER*/
+.footer
+{
+    background-color: #B3AB9E;
+    color: #4F4B45;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px
+}
