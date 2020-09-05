@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<head>
+    <title>User Datagram Protocol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container cf">
+
+        <div class="header">
+           <h1>UDP (USER DATAGRAM PROTOCOL)</h1>
+           <ul>
+               <li><a href="#materi_1">Model Referensi TCP/IP</a></li>
+               <li><a href="#materi_2">Alasan Model Referensi TCP/IP Dibuat Berlapis</a></li>
+               <li><a href="#materi_3">Fungsi Lapisan Transpor (Layer Transport)</a></li>
+               <li><a href="#materi_4">Nomor Port (Port Number)</a></li>
+               <li><a href="#materi_5">UDP (User Datagram Protocol)</a></li>
+               <li><a href="#materi_6">Checksum</a></li>
+           </ul>
+        </div>
+
+        <div class="content">
+            <h2 id="materi_1">Model Referensi TCP/IP</h2>
+            <img src="TCP.png" alt="Model Referensi TCP/IP" title="Model Referensi TCP/IP">
+            <p>TCP (<span>Transimission Control Protocol</span>) / IP (<span>Internet Protocol</span>) merupakan salah satu model jaringan yang dikembangkan oleh
+                 US <span>Department of Defense</span> (DoD). Adapun latar belakang dikembangkannya model jaringan ini disebabkan oleh kebutuhan Amerika  yang 
+                 mengingikan sebuah jaringan yang mampu bertahan dalam kondisi apapun, meski dalam keadaan perang. Dengan model TCP/IP akan memungkinkan komunikasi 
+                 data antara dua komputer dari manapun tanpa hambatan dan dalam durasi yang cepat. Salah satu implementasi dari TCP/IP adalah internet.
+                </p>
+            <br><br>
+
+            <h3><span>Application Layer</span> (Lapisan Aplikasi)</h3>
+            <p>Lapisan ini berfungsi untuk mendefinisikan aplikasi-aplikasi yang dijalankan pada jaringan. Lapisan ini terdiri dari gabungan lapisan-lapisan <span>session, presentation</span> dan <span>application</span> pada Model OSI. 
+                Lapisan ini digunakan pada program untuk berkomunikasi menggunakan TCP/IP. <span>Interface </span>yang digunakan dalam berkomunikasi adalah nomor port
+                (<span>port number</span>) dan <span>socket</span>. Contohnya adalah FTP (<span>File Transfer Protocol</span>), 
+                SMTP (<span>Simple Mail Transfer Protocol</span>), HTTP (<span>Hypertext Transfer Protocol</span>).
+            </p>
+            <br>
+
+            <h3><span>Transport Layer</span> (Lapisan Transpor)</h3>
+            <p>Lapisan ini berfungsi dalam pengiriman data antara <span>end-to-end</span> ke host secara handal. Lapisan inilah yang akan menjamin keutuhan data/informasi yang 
+                dikirim agar tidak terjadi kesalahan yang akan menimbulkan perbedaan saat data tersebut telah diterima. Contohnya adalah TCP (<span>Transmission Control Protocol</span>) 
+            dan UDP (<span>User Datagram Protocol</span>).
+            </p>
+            <br>
+
+            <h3><span>Network Layer</span> (Lapisan Jaringan)</h3>
+            <p>Lapisan ini berfungsi untuk mendukung IP dan memberikan jalur/rute pada datagrams dari sumber ke tujuan. Contohnya adalah IP (<span>Internet Protocol</span>) dan 
+            protokol perutean (<span>routing protocols</span>).</p>
+            <br>
+
+            <h3><span>Data Link Layer</span> (Lapisan Data Link)</h3>
+            <p>Lapisan ini bertugas dalam mengatur penyaluran data frame-frame pada media fisik yang digunakan secara handal serta akan terjadi transfer data antar elemen jaringan dalam lapisan ini. 
+                Pada lapisan ini juga menyediakan pelayanan untuk melakukan deteksi dan koreksi pada data yang mengalami kesalahan saat ditransmisikan. Contohnya adalah ethernet, PPP (<span>Point to Point Protocol</span>).</p>
+            <br>
+
+            <h3><span>Physical Layer</span> (Lapisan Fisik)</h3>
+            <p>Pada lapisan ini akan terjadi proses pengiriman bit-bit pada media transmisi. Contohnya adalah kabel dan NIC (<span>Network Interface Card</span>). 
+                Lapisan ini juga mendefinisikan besaran fisik seperti media komunikasi, tegangan, arus, dan sebagainya.</p>
+            <br><br><br><br><br>
+
+            <h2 id="materi_2">Mengapa Model Referensi TCP/IP Dibuat Berlapis?</h2>
+            <p>Tujuan model referensi TCP/IP dibuat berlapis adalah untuk mempermudah dalam proses pemetaan data sesuai dengan fungsinya masing-masing di setiap lapisannya serta mempermudah dalam 
+                proses transmisi data sehingga data sampai ke tujuan.
+            </p>
+            <br><br><br><br><br>
+
+            <h2 id="materi_3">Fungsi <span>Transport Layer</span> (Lapisan Transpor)</h2>
+            <p>Lapisan transpor atau <span>transport layer</span> berfungsi dalam menyediakan protokol komunikasi <span>end-to-end</span>. Lapisan ini bertugas untuk menjaga keselamatan data
+            dengan mengatur kendali aliran data (<span>flow control</span>), mendeteksi error (<span>error detection</span>) dan mengoreksi (<span>correction</span>), mengurutkan data 
+            (<span>data sequencing</span>), serta melakukan perubahan pada ukuran data (<span>size of the packet</span>).</p>
+            <br><br><br><br><br>
+
+            <h2 id="materi_4">Nomor Port (<span>Port Number</span>)</h2>
+            <p>Dalam protokol jaringan TCP/IP, terdapat suatu mekanisme yang mengizinkan komputer untuk dalam mendukung beberapa sesi koneksi dengan komputer lainnya dan program di dalam 
+                jaringan, mekanisme ini disebut dengan port. Port mampu mengidentifikasi aplikasi dan layanan yang menggunakan jaringan TCP/IP. Port umumnya dikenal sebagai <span>Port Number</span> 
+                yang terdiri dari angka 16-bit (dua byte) dengan jumlah port maksimum untuk adalah 65536 buah yang diklasifikasikan sesuai dengan protokol transpor yang digunakan.
+                Berdasarkan penomorannya, port terbagi menjadi tiga jenis yang diantaranya adalah : </p>
+                <br><br>
+
+            <h3>1. <span>Well-known Port</span></h3>
+            <p>Range port ini berkisar antara 0 hingga 1023. Nomor Port yang termasuk dalam jenis ini selalu merepresentasikan layanan jaringan yang sama dan ditetapkan oleh IANA (<span>Internet Assigned Number Authority</span>)
+                Port jenis ini didefinisikan dalam RFC 1060. Adapun beberapa contoh dari <span>Well-known Port</span> yang sering digunakan adalah FTP (<span>File Transfer Protocol</span>), SMTP (<span>Simple Main Transfer Protocol</span>, 
+                HTTP (<span>Hypertext Transfer Protocol</span>), POP3 (<span>Post Office Protocol version 3</span>), IMAP (<span>Internet Message Access Protocol</span>).</p>
+            <br>
+
+            <h3>2. <span>Registered Port</span></h3>
+            <p>Range Port ini berkisar dari 1024 hingga 49151. Port jenis ini umumnya digunakan untuk mendukung aplikasi dan sistem operasi yang dibuat oleh vendor-vendor komputer atau jaringan yang berbeda. <span>Registered Port</span> ini telah
+                didaftar oleh IANA (<span>Internet Assigned Number Authority</span>) namun, tidak dialokasikan secara permanen, sehingga memungkinkan penggunaan nomor port yang sama.</p>
+            <br>
+
+            <h3>3. <span>Dynamically Assigned Port</span></h3>
+            <p>Range port ini berkisar dari 1024 hingga 65536 yang dapat digunakan ataupun dilepaskan sesuai dengan kebutuhan. Port jenis ini merupakan port yang telah ditetapkan oleh sistem operasi atau aplikasi yang digunakan untuk melayani 
+                permintaan dari pengguna (<span>user</span>).
+            </p>
+            <br><br>
+
+            <p>Nomor port umumnya digunakan dalam hal-hal terkait dengan pengalamatan jaringan. Dalam jaringan TCP/IP, TCP dan UDP tentunya menggunakan set port yang miliknya sendiri yang bekerja sama dengan IP (<span>Address</span>). 
+                Dalam hal ini, nomor port berfungsi layaknya ekstensi telepon. Begitu pula dengan komputer yang juga memiliki alamat utama dan satu set nomor port yang digunakan untuk menangani koneksi masuk dan keluar. Dengan cara yang sama yakni 
+                satu nomor telepon dapat digunakan oleh semua karyawan dalam gedung itu, satu IP (<span>Address</span>) mampu digunakan untuk berkomunikasi dengan berbagai jenis aplikasi dengan menggunakan satu router, IP (<span>Address</span>) berfungsi untuk 
+                mengidentifikasi komputer tujuan dan nomor port berfungsi untuk mengidentifikasi aplikasi tujuan.</p>
+            <br><br><br><br><br>
+
+            <h2 id="materi_5">UDP (<span>User Datagram Protocol</span>)</h2>
+            <p>UDP merupakan singkatan dari <span>User Datagram Protocol</span> yang terdapat di lapisan transpor (<span>Layer Transport</span>). UDP umumnya disebut sebagai protokol transpor yang tidak handal (<span>Unrealiable Transfer Protocol</span>). 
+                Hal ini disebabkan karena UDP yang tidak memberikan pelayanan menggunakan IP apapun kecuali dalam komunikasi secara <span>process-to-process</span> dan <span>host-to-host</span>. Penggunaan UDP sangat tepat digunakan dalam proses pengiriman 
+                pesan yang relatif kecil dan tidak terlalu memerlukan kehandalan dalan proses pengirimannya. Hal ini disebabkan pengiriman data melalui UDP lebih menekankan kepada kecepatan dibandingkan kehandalan. Secara umum, UDP dapat digunakan dalam beberapa hal, yang diantaranya :</p>
+            <br>
+            <p>1. Penggunaan UDP yang tepat dapat dilakukan dalam proses komunikasi <span>request-respond</span> yang sederhana.</p>
+            <p>2. UDP cocok untuk digunakan dalam mekanisme kendali aliran (<span>flow control</span>) dan error internal. Seperti dalam TFTP (<span>Trivial File Transfer Protocol</span>) yang memiliki kendali aliran dan error sendiri pada prosesnya.</p>
+            <p>3. UDP memiliki kemampuan <span>multicasting</span> yang sudah tertanam dalam perangkat lunak (<span>software</span>) UDP.</p>
+            <p>4. UDP dapat digunakan pada pengaturan proses, seperti pada SNMP (<span>Simple Network Management Protocol</span>).</p>
+            <p>5. UDP dapat digunakan untuk beberapa protokol dalam melakukan proses rutin (<span>update</span>), seperti <span>Routing Information Protocol</span>.</p>
+            <br>
+
+            <p>Adapun karakteristik dari UDP yakni sebagai berikut :</p>
+            <br>
+
+            <h3>1. <span>End-to-end</span></h3> 
+            <p>UDP dapat mengidentifikasi proses yang sedang berjalan dalam komputer.</p>
+            <br>
+
+            <h3>2. <span>Connectionless</span></h3>
+            <p>UDP memiliki paradigma tanpa membuat koneksi sebelumnya dengan tanpa adanya kontrol.</p>
+            <br>
+
+            <h3>3. <span>Message-oriented</span></h3>
+            <p>UDP mampu mengirimkan dan menerima data secara segmen.</p>
+            <br>
+
+            <h3>4. <span>Best-effort</span></h3>
+            <p>UDP mengutamakan pengiriman yang terbaik.</p>
+            <br>
+
+            <h3>5. <span>Arbitrary interaction</span></h3>
+            <p>UDP dapat menerima dan mengirim data/informasi dari banyak proses.</p>
+            <br>
+
+            <h3>6. <span>Operating system independent</span></h3>
+            <p>UDP berdiri sendiri dalam sistem operasi (<span>Operating System</span>).</p>
+            <br><br>
+            
+            <p>Dengan menggunakan UDP (<span>User Datagram Protocol</span>), komputer yang bertindak sebagai pengirim data dan komputer yang bertindak sebagai penerima data tidak perlu lagi melakukan negosiasi saat melakukan pertukaran data atau biasa disebut 
+                dengan validasi data. Hal ini disebabkan oleh kemampuan UDP yang dalam melakukan pengiriman data melalui interaksi antara pengirim dan penerima lebih sedikit dibandingkan dengan menggunakan TCP (<span>Transmission Control Protocol</span>).
+                Adapun tahapan cara kerja UDP adalah sebagai berikut : </p>
+            <br>
+            <p>1. Suatu paket berisi client port dan port sumber yang berbentuk file text dikirim di dalam UDP Header.</p>
+            <p>2. Paket isi port client dan port sumber audio dikirm ke server dalam UDP Header.</p>
+            <p>3. Adanya UDP bertujuan membaca nomor port tujuan dan proses data.</p>
+            <p>4. Paket yang asli memiliki port tujuan, sehingga server mampu untuk mengirimkan kembali data ke FTFP Client.</p>
+            <p>5. Ketika client mengirimkan file audio, maka proses di poin ke 3 dan 4 akan terulang kembali.</p>
+            <p>6. Apabila suatu aplikasi ingin melakukan pengiriman data, UDP tidak akan melakukan proses buffer ataupun proses fragmen kepada setiap data yang masuk.</p>
+            <p>7. Sebab UDP tidak melakukan proses data terutama tidak melakukan proses fragmen terhadap data yang dikirimkan oleh aplikasi, hal ini akan menimbulkan kemungkinan terjadinya ukuran data yang lebih besar dari 
+                MTU (<span>Maximum Transmission Unit</span>). Sehingga proses untuk melakukan fragmen data terjadi pada lapisan IP.</p>
+
+            <br><br><br><br><br>
+
+            <h2 id="materi_6"><span>Checksum</span></h2>
+            <p><span>Checksum</span> merupakan suatu urutan angka dan huruf yang berfungsi dalam melakukan proses pemeriksaan terhadap kesalahan data yang terjadi saat proses transmisi atau penyimpanan. 
+                <span>Checksum</span> sendiri dapat diartikan sebuah <span>field</span> yang berisi 16-bit dengan ukuran data yang tetap yang dihitung dari suatu blok data digital yang bertujuan untuk mendeteksi 
+                kesalahan yang mungkin terjadi pada saat proses transmisi atau penyimpanan. Perhitungan <span>checksum</span> pada UDP tentunya tak sama dengan IP maupun pada ICMP. Dalam melakukan perhitungan <span>checksum</span> pada UDP akan melibatkan tiga bagian yang diantaranya <span>pseudoheader</span>, 
+                <span>header</span> UDP, serta data yang berasal dari lapisan aplikasi (<span>application layer</span>).</p>
+                <br>
+
+            <p>Proses ini dimulai dari <span>pseudoheader</span> yang merupakan bagian dari header paket IP pada <span>user datagram</span> yang dibungkus dengan mengisi beberapa bagian dengan 0. Apabila <span>pseudoheader</span> 
+                tidak dimuat dalam <span>checksum</span>, kemungkinan <span>user datagram</span> masih utuh, namun jika <span>header</span> IP mengalami kerusakan kemungkinan data yang dikirimkan akan sampai kepada host yang salah. 
+                Pada bagian kode protokol berfungsi dalam menjamin bahwa paket merupakan UDP bukan protokol lapisan transpor lainnya. Walaupun menggunakan protokol yang berbeda seperti menggunakan UDP dan TCP, nomor port tujuan bisa mengalami kesamaan. 
+                Misalkan UDP memiliki nomor dari kode protokol yakni 17, jika terjadi perubahan nilai saat proses transmisi, maka dalam perhitungan <span>checksum</span> akan mendeteksi perubahan nilai tersebut dari sisi penerima yang kemudian membatalkan 
+                paket UDP. Hal ini dilakukan untuk menghindari terjadinya transmisi pada protokol yang salah.</p>
+                <br>
+            
+            <p><span>Checksum</span> sendiri tak hanya digunakan di UDP, TCP/IP juga menggunakan <span>checksum</span> yang tak lain juga digunakan dalam mendeteksi error. Adapun perhitungan <span>checksum</span> terbagi menjadi dua yang diantaranya adalah : </p>
+            <br>
+
+            <img src="checksum.png" alt="Checksum" width="75%">
+            <br>
+
+            <h3>Perhitungan <span>checksum</span> pada sisi pengirim</h3>
+            <p>Dalam sisi pengirim, paket akan dibagi menjadi n-bit bagian (n biasanya 16) yang kemudian bagian-bagian tersebut akan ditambahkan menggunakan metode aritmatika (<span>one's complement</span>)</p>
+            <p>1. Paket dibagi ke dalam <span>k</span> bagian, yang setiap bagiannya terdiri dari <span>n</span> bit.</p>
+            <p>2. Seluruh bagian tersebut kemudian ditambahkan menggunakan metode aritmatika (<span>one's complement</span>).</p>
+            <p>3. Hasil akhir dari proses tadi akan dikomplementasikan membentuk <span>checksum</span></p>
+            <br><br>
+
+            <h3>Perhitungan <span>checksum</span> pada sisi penerima</h3>
+            <p>1. Paket dibagi ke dalam <span>k</span> bagian, yang setiap bagiannya terdiri dari <span>n</span> bit.</p>
+            <p>2. Seluruh bagian tersebut kemudian ditambahkan menggunakan metode aritmatika (<span>one's complement</span>).</p>
+            <p>3. Hasil dari proses tadi akan dikomplementasi.</p>
+            <p>4. Jika hasil akhir bernilai 0, maka paket tidak mengalami kerusakan dan dapat diterima. Namun, sebaliknya apabila hasil akhir tidak bernilai 0, 
+                maka paket akan ditolak.</p>
+
+        </div>
+
+        <div class="reference">
+            <h3>REFERENSI</h3>
+            <ul>
+                <li><a href="https://dinus.ac.id/repository/docs/ajar/Model_Protokol_dan_Referensi_Jaringan_Sesi_4.pdf" target="_blank">Referensi 1 : https://dinus.ac.id/repository/docs/ajar/Model_Protokol_dan_Referensi_Jaringan_Sesi_4.pdf</a></li>
+                <li><a href="https://repository.unikom.ac.id/35282/1/1-Konsep%20Dasar%20Jaringan%20Komputer-Materi.pdf" target="_blank">Referensi 2 : https://repository.unikom.ac.id/35282/1/1-Konsep%20Dasar%20Jaringan%20Komputer-Materi.pdf</a></li>
+                <li><a href="http://bebas.ui.ac.id/v14/v11/ref-ind-1/network/TCPIP_Part1.pdf" target="_blank">Referensi 3 : http://bebas.ui.ac.id/v14/v11/ref-ind-1/network/TCPIP_Part1.pdf</a></li>
+                <li><a href="https://jurnal.unived.ac.id/index.php/jmi/article/download/455/393" target="_blank">Referensi 4 : https://jurnal.unived.ac.id/index.php/jmi/article/download/455/393</a></li>
+                <li><a href="https://socs.binus.ac.id/2019/11/06/port-jaringan-komputer/" target="_blank">Referensi 5 : https://socs.binus.ac.id/2019/11/06/port-jaringan-komputer/</a></li>
+                <li><a href="monitorteknologi.com/apa-yang-dimaksud-port-dalam-jaringan-komputer/" target="_blank">Referensi 6 : monitorteknologi.com/apa-yang-dimaksud-port-dalam-jaringan-komputer/</a></li>
+                <li><a href="https://qwords.com/blog/udp-adalah/" target="_blank">Referensi 7 : https://qwords.com/blog/udp-adalah/</a></li>
+                <li><a href="http://te.ugm.ac.id/~risanuri/v01/wp-content/uploads/2011/02/udp.pdf" target="_blank">Referensi 8 : http://te.ugm.ac.id/~risanuri/v01/wp-content/uploads/2011/02/udp.pdf</a></li>
+            </ul>
+            <br>
+        </div>
+
+        <div class="footer">
+            <p>Nur Annisa Yusrah Putra Djaya (D121 191 056)</p>
+        </div>
+    </div>
+</body>
+</html>
